@@ -1,0 +1,21 @@
+{
+  "name": "Sense The Future With Sensors",
+  "short_name": "SenseTheFuture",
+  "description": "Sensor Innovation and Technology Community empowering students and engineers to explore sensors, automation, robotics, and intelligent systems.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f4f7fb",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/images/Sense the Future with Sensors- Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

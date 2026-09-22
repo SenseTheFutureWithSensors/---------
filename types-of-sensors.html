@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Types of Sensors: Working Principles & Complete Guide | Sense The Future</title>
+  <meta name="description" content="Comprehensive guide to all sensor types: Thermal, Optical, Motion, Proximity, Pressure, Gas, and Biomedical. Working principles, pinouts, and microcontroller interfacing.">
+  <meta name="keywords" content="types of sensors, sensor classification, analog vs digital sensors, active vs passive sensors, temperature sensor, ultrasonic sensor, accelerometer, IoT sensors, Arduino sensors, sensor pinouts">
+  <meta name="author" content="Sense The Future With Sensors Community">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#f4f7fb">
+  <script>(function(){try{var t=localStorage.getItem("sensor-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="canonical" href="https://sensethefuture.in/types-of-sensors.html">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sense The Future With Sensors">
+  <meta property="og:url" content="https://sensethefuture.in/types-of-sensors.html">
+  <meta property="og:title" content="Types of Sensors: Working Principles & Complete Guide | Sense The Future">
+  <meta property="og:description" content="Comprehensive guide to all sensor types: Thermal, Optical, Motion, Proximity, Pressure, Gas, and Biomedical. Working principles, pinouts, and microcontroller interfacing.">
+  <meta property="og:image" content="https://sensethefuture.in/assets/hero-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Guide to Sensor Types and Classifications">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://sensethefuture.in/types-of-sensors.html">
+  <meta name="twitter:title" content="Types of Sensors: Working Principles & Complete Guide | Sense The Future">
+  <meta name="twitter:description" content="Comprehensive guide to all sensor types: Thermal, Optical, Motion, Proximity, Pressure, Gas, and Biomedical. Working principles, pinouts, and microcontroller interfacing.">
+  <meta name="twitter:image" content="https://sensethefuture.in/assets/hero-banner.png">
+  <meta name="twitter:image:alt" content="Guide to Sensor Types and Classifications">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sensethefuture.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Types of Sensors",
+            "item": "https://sensethefuture.in/types-of-sensors.html"
+          }
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "headline": "Types of Sensors: Working Principles & Complete Guide",
+        "description": "Comprehensive reference guide detailing sensor working mechanisms, classifications (analog vs digital, active vs passive), pinout specifications, and circuit interfacing tips.",
+        "url": "https://sensethefuture.in/types-of-sensors.html",
+        "image": "https://sensethefuture.in/assets/hero-banner.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Sense The Future With Sensors"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sense The Future With Sensors",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sensethefuture.in/assets/images/Sense%20the%20Future%20with%20Sensors-%20Logo.png"
+          }
+        },
+        "inLanguage": "en-US",
+        "about": [
+          "Temperature Sensors",
+          "Pressure Sensors",
+          "Optical Sensors",
+          "Motion Sensors",
+          "Ultrasonic Distance Sensors",
+          "Gas & Air Quality Sensors"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="site-glow site-glow-one" aria-hidden="true"></div>
+  <div class="site-glow site-glow-two" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Sense The Future With Sensors home">
+        <span class="brand-mark"><i class="fa-solid fa-wave-square"></i></span>
+        <span><strong>SENSE THE FUTURE</strong><small>WITH SENSORS</small><em>सेन्सर्स के साथ भविष्य को महसूस करें</em></span>
+      </a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="types-of-sensors.html" class="active" aria-current="page">Types of Sensors</a>
+        <a href="innovation.html">Innovation</a>
+        <a href="learning.html">Learning</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#community">Community</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="button button-small button-primary drawer-cta" href="https://chat.whatsapp.com/LUz2uedTbJv85oK4r1rBTY" target="_blank" rel="noopener noreferrer">Join Community <i class="fa-solid fa-arrow-right"></i></a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="true" title="Toggle color theme"><i class="fa-solid fa-moon"></i><span>Dark</span></button>
+        <a class="button button-small button-primary header-cta" href="https://chat.whatsapp.com/LUz2uedTbJv85oK4r1rBTY" target="_blank" rel="noopener noreferrer">Join Community <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero section-pad">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="index.html#sensors">Sensors</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Types of Sensors</span>
+        </div>
+
+        <div class="page-hero-grid">
+          <div class="reveal">
+            <span class="eyebrow"><span class="status-dot"></span> Comprehensive Taxonomy &amp; Guide <span class="eyebrow-rule"></span> 2026</span>
+            <h1>Sensors: <span>Types of Sensors</span></h1>
+            <p class="page-hero-lead">Sensors are the sensory organs of modern technology. They convert physical phenomena—such as heat, light, sound, acceleration, pressure, and gas molecules—into measurable electrical signals. Explore our complete guide to sensor classifications, working principles, popular modules, and microcontroller interfacing.</p>
+            <div class="button-row">
+              <a class="button button-primary" href="#catalog">Browse Sensor Catalog <i class="fa-solid fa-arrow-down"></i></a>
+              <a class="button button-ghost" href="#classification">Classification Criteria <i class="fa-solid fa-layer-group"></i></a>
+            </div>
+            <div class="quick-jumps" aria-label="Quick Category Jump">
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-temperature-half"></i> Temperature</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-sun"></i> Optical &amp; Light</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-person-running"></i> Motion &amp; IMU</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-ruler-horizontal"></i> Proximity</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-gauge-high"></i> Pressure</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-wind"></i> Gas &amp; Air</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-heart-pulse"></i> Biomedical</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-volume-high"></i> Acoustic</a>
+              <a class="jump-chip" href="#catalog"><i class="fa-solid fa-magnet"></i> Magnetic</a>
+            </div>
+          </div>
+
+          <div class="stats-badge-grid reveal">
+            <div class="stat-box">
+              <b>15+</b>
+              <small>Core Sensor Families</small>
+            </div>
+            <div class="stat-box">
+              <b>40+</b>
+              <small>Popular Modules &amp; ICs</small>
+            </div>
+            <div class="stat-box">
+              <b>5</b>
+              <small>Interface Protocols</small>
+            </div>
+            <div class="stat-box">
+              <b>100%</b>
+              <small>Practical Code Snippets</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fundamental Sensor Classifications -->
+    <section class="section-pad classification-section" id="classification">
+      <div class="container">
+        <div class="section-heading-row reveal">
+          <div>
+            <span class="eyebrow">01 — Taxonomy &amp; Fundamentals</span>
+            <h2>How Sensors are<br><span>Classified.</span></h2>
+          </div>
+          <p>Sensors are categorized according to how they produce signals, whether they require external power, whether they touch the subject, and the physical domains they measure.</p>
+        </div>
+
+        <!-- Classification Comparison Grid -->
+        <div class="comparison-grid">
+          <!-- Analog vs Digital -->
+          <article class="comparison-card highlight reveal">
+            <div class="comparison-header">
+              <h3>By Output Signal</h3>
+              <span class="comparison-badge badge-analog">Continuous vs Discrete</span>
+            </div>
+            <p>The nature of the electrical signal produced determines how a microcontroller interfaces with the sensor.</p>
+            <ul>
+              <li>
+                <i class="fa-solid fa-wave-square"></i>
+                <div>
+                  <strong>Analog Sensors:</strong> Output a continuous voltage or current directly proportional to the physical quantity (e.g., 0V to 5V). Must be converted to numbers by an Analog-to-Digital Converter (ADC). Examples: LDR, Thermocouple, LM35, Potentiometer.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-microchip"></i>
+                <div>
+                  <strong>Digital Sensors:</strong> Convert measured data internally into discrete binary numbers or packetized bus data (I2C, SPI, 1-Wire, UART). Highly immune to line noise and cable losses. Examples: DHT22, BME280, MPU6050, DS18B20.
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Active vs Passive -->
+          <article class="comparison-card reveal">
+            <div class="comparison-header">
+              <h3>By Energy / Power Source</h3>
+              <span class="comparison-badge badge-active">Self-Generated vs Excited</span>
+            </div>
+            <p>Determines whether the transducer requires auxiliary electrical energy to modulate signals.</p>
+            <ul>
+              <li>
+                <i class="fa-solid fa-bolt"></i>
+                <div>
+                  <strong>Active Sensors:</strong> Require an external power supply to energize the sensing circuit or emit probe signals. Examples: Ultrasonic sensor (emits sound), PIR motion detector, Strain Gauge (Wheatstone bridge excitation), Hall switch.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-leaf"></i>
+                <div>
+                  <strong>Passive Sensors:</strong> Generate an output voltage or current autonomously by harvesting energy directly from the physical stimulus itself. Examples: Thermocouples (Seebeck effect), Piezoelectric crystals, Photovoltaic cells.
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Contact vs Non-Contact -->
+          <article class="comparison-card reveal">
+            <div class="comparison-header">
+              <h3>By Contact Mode</h3>
+              <span class="comparison-badge badge-digital">Touch vs Remote</span>
+            </div>
+            <p>Whether physical touch is necessary to gather accurate readings from the target medium.</p>
+            <ul>
+              <li>
+                <i class="fa-solid fa-hand-pointer"></i>
+                <div>
+                  <strong>Contact Sensors:</strong> Must make physical surface contact with the medium or object (e.g., RTD temperature probes, limit switches, strain gauges, soil moisture probes).
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-satellite-dish"></i>
+                <div>
+                  <strong>Non-Contact Sensors:</strong> Measure attributes across free space via radiation, sound, or magnetic flux (e.g., Infrared thermometers, ToF Laser distance, Ultrasonic, Hall effect).
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- By Physical Domain -->
+          <article class="comparison-card reveal">
+            <div class="comparison-header">
+              <h3>By Measurand &amp; Domain</h3>
+              <span class="comparison-badge badge-passive">Physical Properties</span>
+            </div>
+            <p>Classification based on the type of physical property or environmental variable being monitored.</p>
+            <ul>
+              <li>
+                <i class="fa-solid fa-fire-burner"></i>
+                <div><strong>Thermal:</strong> Temperature, heat flux, thermal conductivity.</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-gauge"></i>
+                <div><strong>Mechanical:</strong> Force, pressure, acceleration, torque, mass, strain.</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-eye"></i>
+                <div><strong>Optical &amp; Radiation:</strong> Lux, photon wavelength, UV index, IR radiation.</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-flask-vial"></i>
+                <div><strong>Chemical &amp; Biological:</strong> Gas concentration, pH, humidity, SpO2, glucose.</div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Sensor Catalog Section -->
+    <section class="section-pad" id="catalog">
+      <div class="container">
+        <div class="section-heading-row reveal">
+          <div>
+            <span class="eyebrow">02 — Comprehensive Catalog</span>
+            <h2>Explore Every<br><span>Sensor Type.</span></h2>
+          </div>
+          <p>Filter by category or search by sensor model (e.g., DHT22, MPU6050, HC-SR04, BMP280). Click any card for detailed pinouts, operating voltage, and sample code.</p>
+        </div>
+
+        <!-- Catalog Toolbar -->
+        <div class="catalog-toolbar reveal">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
+            <div class="catalog-search-wrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" id="catalog-search" placeholder="Search by name, IC (e.g., DHT22, MPU6050), or application..." aria-label="Search sensor types">
+            </div>
+            <div id="visible-count" style="font:600 11px 'Space Grotesk';color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;">15 Sensor Types Shown</div>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="Sensor category filters">
+            <button class="filter-btn active" type="button" data-filter="all">All Categories</button>
+            <button class="filter-btn" type="button" data-filter="thermal"><i class="fa-solid fa-temperature-half"></i> Thermal</button>
+            <button class="filter-btn" type="button" data-filter="optical"><i class="fa-solid fa-sun"></i> Optical</button>
+            <button class="filter-btn" type="button" data-filter="motion"><i class="fa-solid fa-person-running"></i> Motion &amp; IMU</button>
+            <button class="filter-btn" type="button" data-filter="proximity"><i class="fa-solid fa-ruler-horizontal"></i> Proximity</button>
+            <button class="filter-btn" type="button" data-filter="pressure"><i class="fa-solid fa-gauge-high"></i> Pressure &amp; Force</button>
+            <button class="filter-btn" type="button" data-filter="gas"><i class="fa-solid fa-wind"></i> Gas &amp; Air</button>
+            <button class="filter-btn" type="button" data-filter="environmental"><i class="fa-solid fa-leaf"></i> Environmental</button>
+            <button class="filter-btn" type="button" data-filter="biomedical"><i class="fa-solid fa-heart-pulse"></i> Biomedical</button>
+            <button class="filter-btn" type="button" data-filter="sound"><i class="fa-solid fa-volume-high"></i> Acoustic</button>
+            <button class="filter-btn" type="button" data-filter="magnetic"><i class="fa-solid fa-magnet"></i> Magnetic</button>
+          </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="catalog-grid" id="catalog-grid">
+
+          <!-- 1. Thermocouples & RTDs -->
+          <article class="catalog-card reveal" data-category="thermal" data-search="thermocouple rtd pt100 max6675 temperature thermal heat industrial furnace analog spi">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                  <div>
+                    <span class="card-category-tag">Thermal / Temperature</span>
+                    <h3>Thermocouples &amp; RTDs</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Exploits the Seebeck effect or positive temperature coefficient of platinum (PT100) to measure extreme thermal ranges in industrial environments.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Analog / SPI</span>
+                <span class="card-chip">K-Type</span>
+                <span class="card-chip">PT100</span>
+                <span class="card-chip">MAX6675</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Range</span>
+                  <strong>-200°C to +1350°C</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Interface</span>
+                  <strong>SPI / Microvolt ADC</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="thermocouple">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 2. Digital Temperature & Humidity -->
+          <article class="catalog-card reveal" data-category="thermal" data-search="digital temperature humidity dht22 dht11 am2302 ds18b20 1-wire weather climate room">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
+                  <div>
+                    <span class="card-category-tag">Thermal / Environmental</span>
+                    <h3>Digital Temp &amp; Humidity</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Combines capacitive polymer humidity sensors and semiconductor bandgap temperature sensors with internal calibrated ADC for digital 1-Wire readout.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">1-Wire Digital</span>
+                <span class="card-chip">DHT22</span>
+                <span class="card-chip">DHT11</span>
+                <span class="card-chip">DS18B20</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Accuracy</span>
+                  <strong>±0.5°C | ±2% RH</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Voltage</span>
+                  <strong>3.3V – 5.5V DC</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="digital-temp">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 3. Infrared Pyrometers -->
+          <article class="catalog-card reveal" data-category="thermal" data-search="infrared pyrometer non-contact mlx90614 amg8833 thermal camera forehead medical i2c">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                  <div>
+                    <span class="card-category-tag">Thermal / Optical</span>
+                    <h3>Infrared Non-Contact Pyrometers</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Captures blackbody infrared radiation using an internal thermopile membrane to determine exact object surface temperature without physical contact.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">I2C Digital</span>
+                <span class="card-chip">MLX90614</span>
+                <span class="card-chip">AMG8833</span>
+                <span class="card-chip">Medical Grade</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Object Range</span>
+                  <strong>-70°C to +380°C</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Accuracy</span>
+                  <strong>Up to ±0.2°C</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="infrared-temp">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 4. Light & Optical -->
+          <article class="catalog-card reveal" data-category="optical" data-search="light optical sensor ldr photoresistor bh1750 lux photodiode ambient sunlight solar">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-sun"></i></div>
+                  <div>
+                    <span class="card-category-tag">Optical / Radiation</span>
+                    <h3>Ambient Light &amp; Optical Sensors</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Measures incident photon flux through photo-conduction (LDR) or calibrated silicon photodiode arrays with human-eye photopic response filters (BH1750).</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Analog / I2C</span>
+                <span class="card-chip">LDR GL5528</span>
+                <span class="card-chip">BH1750</span>
+                <span class="card-chip">TSL2561</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Dynamic Range</span>
+                  <strong>1 – 65,535 Lux</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Applications</span>
+                  <strong>Streetlights / Phones</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="light-ambient">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 5. PIR Motion Detectors -->
+          <article class="catalog-card reveal" data-category="motion" data-search="motion pir passive infrared hc-sr501 am312 presence human alarm security gpio">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-person-running"></i></div>
+                  <div>
+                    <span class="card-category-tag">Motion &amp; Presence</span>
+                    <h3>PIR Passive Infrared Motion</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Pyroelectric elements split behind a segmented Fresnel lens detect differential thermal radiation emitted by warm moving human bodies.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Digital GPIO</span>
+                <span class="card-chip">HC-SR501</span>
+                <span class="card-chip">AM312</span>
+                <span class="card-chip">Fresnel Lens</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Detection Cone</span>
+                  <strong>Up to 7m / 120°</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Output</span>
+                  <strong>3.3V High/Low Pulse</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="motion-pir">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 6. IMU & Accelerometers -->
+          <article class="catalog-card reveal" data-category="motion" data-search="imu accelerometer gyroscope mpu6050 bno055 tilt orientation drone balance robotics mems i2c">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                  <div>
+                    <span class="card-category-tag">Inertial &amp; Navigation</span>
+                    <h3>6-DoF IMU &amp; Accelerometers</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Silicon MEMS proof masses measure acceleration along X-Y-Z axes and angular velocity using the Coriolis effect for robot stabilization and attitude tracking.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">I2C / SPI</span>
+                <span class="card-chip">MPU6050</span>
+                <span class="card-chip">ADXL345</span>
+                <span class="card-chip">BNO055</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Ranges</span>
+                  <strong>±2g to ±16g | ±2000°/s</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Resolution</span>
+                  <strong>16-bit Precision ADC</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="imu-accelerometer">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 7. Ultrasonic Distance -->
+          <article class="catalog-card reveal" data-category="proximity" data-search="ultrasonic distance ranging hc-sr04 obstacle parking water tank level sound waves">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-ruler-horizontal"></i></div>
+                  <div>
+                    <span class="card-category-tag">Proximity &amp; Distance</span>
+                    <h3>Ultrasonic Distance &amp; Ranging</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Emits a 40kHz acoustic burst and calculates distance via time-of-flight. Reliable regardless of target color or transparency.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Pulse Duration (TTL)</span>
+                <span class="card-chip">HC-SR04</span>
+                <span class="card-chip">US-015</span>
+                <span class="card-chip">JSN-SR04T</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Range</span>
+                  <strong>2 cm – 400 cm</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Resolution</span>
+                  <strong>±3 mm</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="proximity-ultrasonic">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 8. Laser Time-of-Flight (ToF) -->
+          <article class="catalog-card reveal" data-category="proximity" data-search="laser time of flight tof vl53l0x vl53l1x lidar optics photon distance millimeter">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                  <div>
+                    <span class="card-category-tag">Proximity &amp; Optical</span>
+                    <h3>Laser Time-of-Flight (ToF)</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Measures the picosecond flight time of invisible 940nm laser photons. Provides millimeter accuracy immune to object color or reflectivity variations.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">I2C Digital</span>
+                <span class="card-chip">VL53L0X</span>
+                <span class="card-chip">VL53L1X</span>
+                <span class="card-chip">VCSEL 940nm</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Range</span>
+                  <strong>30 mm – 2000 mm</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Accuracy</span>
+                  <strong>Millimeter Precision</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="tof-laser">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 9. Barometric Pressure & Altimeter -->
+          <article class="catalog-card reveal" data-category="pressure" data-search="barometric pressure altimeter bmp280 bme280 altitude weather weather station i2c spi">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                  <div>
+                    <span class="card-category-tag">Pressure &amp; Environmental</span>
+                    <h3>Barometric Pressure &amp; Altimeter</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">High-precision piezoresistive silicon diaphragm measures absolute atmospheric air pressure to calculate altitude changes down to 1 meter resolution.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">I2C / SPI</span>
+                <span class="card-chip">BMP280</span>
+                <span class="card-chip">BME280</span>
+                <span class="card-chip">DPS310</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Pressure Range</span>
+                  <strong>300 – 1100 hPa</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Altitude Acc.</span>
+                  <strong>±1 meter relative</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="pressure-barometric">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 10. Strain Gauge & Load Cells -->
+          <article class="catalog-card reveal" data-category="pressure" data-search="strain gauge load cell weight scale force hx711 wheatstone bridge 24-bit adc">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-weight-scale"></i></div>
+                  <div>
+                    <span class="card-category-tag">Force &amp; Mechanical</span>
+                    <h3>Strain Gauge &amp; Load Cells</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Measures physical deformation using metallic foil strain gauges wired in a Wheatstone bridge. Paired with a 24-bit ADC for precision weight scales.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">24-bit Serial ADC</span>
+                <span class="card-chip">HX711</span>
+                <span class="card-chip">Load Cell</span>
+                <span class="card-chip">Wheatstone</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Capacity</span>
+                  <strong>1 kg to 500+ kg</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Accuracy</span>
+                  <strong>&lt;0.05% Full Scale</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="force-loadcell">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 11. Gas & Air Quality -->
+          <article class="catalog-card reveal" data-category="gas" data-search="gas air quality mq-2 mq-135 mq-7 co2 smoke lpg hazardous gas leak analog">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-wind"></i></div>
+                  <div>
+                    <span class="card-category-tag">Gas &amp; Chemical</span>
+                    <h3>Gas &amp; Air Quality Sensors</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Heated tin dioxide (SnO2) ceramic semiconductor reacts with combustible or toxic gases, significantly reducing electrical resistance in contaminated air.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Analog + Digital D0</span>
+                <span class="card-chip">MQ-135 (Air/CO2)</span>
+                <span class="card-chip">MQ-2 (Smoke)</span>
+                <span class="card-chip">MQ-7 (CO)</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Sensitivity</span>
+                  <strong>10 – 10,000 ppm</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Heater Power</span>
+                  <strong>5.0V DC (~150mA)</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="gas-airquality">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 12. Soil Moisture & Water Level -->
+          <article class="catalog-card reveal" data-category="environmental" data-search="soil moisture water level rain agriculture capacitive irrigation farming plants analog">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                  <div>
+                    <span class="card-category-tag">Environmental &amp; Agriculture</span>
+                    <h3>Soil Moisture &amp; Water Level</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Measures dielectric capacitance changes created by water content in soil. Capacitive design avoids the galvanic electrode corrosion seen in cheap resistive probes.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Analog Voltage</span>
+                <span class="card-chip">Capacitive v1.2</span>
+                <span class="card-chip">Anti-Corrosion</span>
+                <span class="card-chip">Raindrop PCB</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Operating Volt</span>
+                  <strong>3.3V – 5.0V DC</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Lifespan</span>
+                  <strong>Multi-year Durability</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="soil-moisture">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 13. Biomedical Pulse Oximeter -->
+          <article class="catalog-card reveal" data-category="biomedical" data-search="biomedical pulse oximeter max30102 max30100 heart rate spo2 ecg ad8232 healthcare i2c">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                  <div>
+                    <span class="card-category-tag">Biomedical &amp; Healthcare</span>
+                    <h3>Pulse Oximeter &amp; Heart Rate</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Photoplethysmography (PPG) using dual Red (660nm) and Infrared (880nm) LEDs to measure differential light absorption by oxygenated vs deoxygenated hemoglobin.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">I2C Digital</span>
+                <span class="card-chip">MAX30102</span>
+                <span class="card-chip">AD8232 ECG</span>
+                <span class="card-chip">SpO2 PPG</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Heart Rate</span>
+                  <strong>30 – 220 BPM</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>SpO2 Range</span>
+                  <strong>70% – 100%</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="biomedical-pulse">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 14. Acoustic & Sound -->
+          <article class="catalog-card reveal" data-category="sound" data-search="acoustic sound microphone ky-038 max9814 noise audio decibel clap switch analog digital">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-volume-high"></i></div>
+                  <div>
+                    <span class="card-category-tag">Sound &amp; Acoustics</span>
+                    <h3>Acoustic &amp; Sound Sensors</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Electret condenser or MEMS microphones translate atmospheric acoustic pressure waves into proportional audio waveforms and adjustable threshold trigger pulses.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Analog + Digital D0</span>
+                <span class="card-chip">KY-038</span>
+                <span class="card-chip">MAX9814 (AGC)</span>
+                <span class="card-chip">INMP441 I2S</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>Frequency</span>
+                  <strong>20 Hz – 20 kHz</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Dynamic Range</span>
+                  <strong>40 dB to 120 dB SPL</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="sound-acoustic">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+          <!-- 15. Magnetic & Hall Effect -->
+          <article class="catalog-card reveal" data-category="magnetic" data-search="magnetic hall effect sensor a3144 ss49e hmc5883l compass rpm speedometer navigation">
+            <div>
+              <div class="card-top">
+                <div class="card-icon-title">
+                  <div class="card-icon"><i class="fa-solid fa-magnet"></i></div>
+                  <div>
+                    <span class="card-category-tag">Magnetic &amp; Navigation</span>
+                    <h3>Magnetic Field &amp; Hall Effect</h3>
+                  </div>
+                </div>
+              </div>
+              <p class="card-desc">Exploits the Lorentz force on charge carriers in semiconductors to detect magnetic fields for non-contact gear RPM counting, door alarms, and 3-axis compasses.</p>
+              <div class="card-chips">
+                <span class="card-chip signal-chip">Digital Switch / I2C</span>
+                <span class="card-chip">A3144 Switch</span>
+                <span class="card-chip">SS49E Linear</span>
+                <span class="card-chip">HMC5883L Compass</span>
+              </div>
+              <div class="card-spec-row">
+                <div class="card-spec-item">
+                  <span>RPM Rate</span>
+                  <strong>100,000+ pulses/min</strong>
+                </div>
+                <div class="card-spec-item">
+                  <span>Compass Acc.</span>
+                  <strong>1° – 2° Heading</strong>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" type="button" data-spec-key="magnetic-hall">View Specs &amp; Interfacing <i class="fa-solid fa-arrow-right"></i></button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How Sensors Work: The Signal Chain -->
+    <section class="section-pad flow-section" id="how-they-work">
+      <div class="container">
+        <div class="centered-heading reveal">
+          <span class="eyebrow">03 — Operating Principle</span>
+          <h2>The Sensor <span>Signal Chain.</span></h2>
+          <p>Every sensor follows a structured physical-to-digital transformation path before raw reality becomes actionable software data.</p>
+        </div>
+
+        <div class="signal-chain-wrap">
+          <div class="chain-node reveal">
+            <span class="node-num">STEP 01</span>
+            <i class="fa-solid fa-earth-americas"></i>
+            <h4>Physical Stimulus</h4>
+            <p>Real-world energy: photons, thermal motion, acoustic wave, gas molecules, or gravitational acceleration.</p>
+          </div>
+
+          <div class="chain-node reveal">
+            <span class="node-num">STEP 02</span>
+            <i class="fa-solid fa-microchip"></i>
+            <h4>Transducer Element</h4>
+            <p>Converts physical property into electrical change (e.g. resistance change, capacitance shift, or microvolts).</p>
+          </div>
+
+          <div class="chain-node reveal">
+            <span class="node-num">STEP 03</span>
+            <i class="fa-solid fa-filter"></i>
+            <h4>Signal Conditioning</h4>
+            <p>Operational amplifiers boost micro-signals; low-pass filters eliminate electrical noise and frequency aliasing.</p>
+          </div>
+
+          <div class="chain-node reveal">
+            <span class="node-num">STEP 04</span>
+            <i class="fa-solid fa-binary"></i>
+            <h4>Quantization &amp; ADC</h4>
+            <p>Continuous electrical curves are sampled and quantized into discrete digital binary words (10-bit to 24-bit).</p>
+          </div>
+
+          <div class="chain-node reveal">
+            <span class="node-num">STEP 05</span>
+            <i class="fa-solid fa-brain"></i>
+            <h4>MCU &amp; Action</h4>
+            <p>Microcontroller (ESP32/Arduino) applies calibrations, logs data to cloud IoT dashboards, or triggers actuators.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sensor Selection Guide Matrix -->
+    <section class="section-pad selection-section" id="selection-guide">
+      <div class="container">
+        <div class="section-heading-row reveal">
+          <div>
+            <span class="eyebrow">04 — Engineering Decision Matrix</span>
+            <h2>How to Choose the<br><span>Right Sensor.</span></h2>
+          </div>
+          <p>Key trade-offs between precision, response time, communication bus complexity, and power budgets.</p>
+        </div>
+
+        <div class="guide-table-wrap reveal">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Requirement</th>
+                <th>Recommended Sensor</th>
+                <th>Interface</th>
+                <th>Key Advantages</th>
+                <th>Limitations / Watch-out</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Indoor Room Climate</strong></td>
+                <td>DHT22 / BME280</td>
+                <td>1-Wire / I2C</td>
+                <td>Low cost, integrated temp + humidity + pressure</td>
+                <td>2-second sampling interval limit (DHT22)</td>
+              </tr>
+              <tr>
+                <td><strong>Extreme Heat (&gt;200°C)</strong></td>
+                <td>K-Type Thermocouple + MAX6675</td>
+                <td>SPI</td>
+                <td>Up to +1350°C withstand, rugged metal sheath</td>
+                <td>Requires cold-junction compensation amplifier</td>
+              </tr>
+              <tr>
+                <td><strong>Obstacle Avoidance (&lt;2m)</strong></td>
+                <td>VL53L0X Time-of-Flight</td>
+                <td>I2C</td>
+                <td>Millimeter accurate, unaffected by object surface color</td>
+                <td>Direct sunlight can degrade range indoors vs outdoors</td>
+              </tr>
+              <tr>
+                <td><strong>Water Level in Tank</strong></td>
+                <td>JSN-SR04T Waterproof Ultrasonic</td>
+                <td>Trigger/Echo Pulse</td>
+                <td>Non-contact, corrosion-resistant sealed transducer</td>
+                <td>Blind spot closer than 20cm from probe face</td>
+              </tr>
+              <tr>
+                <td><strong>Drone / Robot Balance</strong></td>
+                <td>MPU6050 / BNO055 IMU</td>
+                <td>I2C / SPI</td>
+                <td>High-speed 6-axis gyro + accelerometer fusion</td>
+                <td>Raw gyro drifts over time without fusion filter</td>
+              </tr>
+              <tr>
+                <td><strong>Combustible Gas Leak</strong></td>
+                <td>MQ-2 / MQ-135 Gas Sensor</td>
+                <td>Analog (A0) + D0</td>
+                <td>Fast response to LPG, methane, smoke particles</td>
+                <td>High 5V heater current (~150mA); needs burn-in warm up</td>
+              </tr>
+              <tr>
+                <td><strong>Automated Plant Watering</strong></td>
+                <td>Capacitive Soil Moisture v1.2</td>
+                <td>Analog (0-3V)</td>
+                <td>Corrosion-proof, lasts years in damp acidic soil</td>
+                <td>Needs individual calibration for different soil mixes</td>
+              </tr>
+              <tr>
+                <td><strong>Wearable Fitness SpO2</strong></td>
+                <td>MAX30102 Pulse Oximeter</td>
+                <td>I2C</td>
+                <td>Integrated dual optical LEDs, miniature package</td>
+                <td>Sensitive to motion artifacts and finger pressure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-section section-pad">
+      <div class="container cta-box reveal">
+        <span class="eyebrow">Start Building Today</span>
+        <h2>Build with <span>Sensors.</span></h2>
+        <p>Join our open technology community to build practical electronics, prototype intelligent IoT systems, and learn embedded programming with peers across India and worldwide.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="https://chat.whatsapp.com/LUz2uedTbJv85oK4r1rBTY" target="_blank" rel="noopener noreferrer">Join WhatsApp Community <i class="fa-brands fa-whatsapp"></i></a>
+          <a class="button button-ghost" href="index.html#projects">Explore Project Ideas <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><i class="fa-solid fa-wave-square"></i></span>
+          <span><strong>SENSE THE FUTURE</strong><small>WITH SENSORS</small><em>सेन्सर्स के साथ भविष्य को महसूस करें</em></span>
+        </a>
+        <p>An innovation-focused community exploring sensors, automation, technology and human-centered invention.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="types-of-sensors.html" class="active">Types of Sensors</a>
+        <a href="innovation.html">Innovation</a>
+        <a href="learning.html">Learning</a>
+        <a href="projects.html">Projects</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="index.html#about">About the Initiative</a>
+        <a href="index.html#resources">Knowledge Hub</a>
+        <a href="index.html#community">Community Values</a>
+        <a href="https://allevents.in/profile/savayu-foundation/25545088" target="_blank" rel="noopener noreferrer">Upcoming Events</a>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <a href="https://chat.whatsapp.com/LUz2uedTbJv85oK4r1rBTY" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp Group</a>
+        <a href="https://www.linkedin.com/in/sense-the-future-with-sensors/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/sensethefuturewithsensors/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61594190966016" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="https://x.com/Savayugroup" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Sense The Future With Sensors. All rights reserved.</span>
+      <span>Initiated by <b>Hashkrio</b> · <b>Badhega Mera Business</b> · <b>Savayu Foundation</b></span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Interactive Sensor Specification Modal -->
+  <div class="modal-backdrop" id="sensor-spec-modal" hidden>
+    <div class="sensor-modal" role="dialog" aria-modal="true" aria-labelledby="spec-modal-title" style="max-width: 620px;">
+      <button class="modal-close" type="button" aria-label="Close specifications"><i class="fa-solid fa-xmark"></i></button>
+      <span class="eyebrow" id="spec-modal-cat">Sensor Specifications</span>
+      <h2 id="spec-modal-title" style="font-size:26px;margin:10px 0 14px;"></h2>
+      
+      <p id="spec-modal-principle" style="font-size:13px;line-height:1.7;margin-bottom:16px;"></p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:11px;margin-bottom:16px;">
+        <div>
+          <span style="color:var(--muted);font:600 9px 'Space Grotesk';text-transform:uppercase;letter-spacing:.08em;">Common Modules / ICs</span>
+          <strong id="spec-modal-modules" style="display:block;color:var(--cyan);font-family:'Space Grotesk';margin-top:2px;"></strong>
+        </div>
+        <div>
+          <span style="color:var(--muted);font:600 9px 'Space Grotesk';text-transform:uppercase;letter-spacing:.08em;">Operating Voltage</span>
+          <strong id="spec-modal-voltage" style="display:block;color:var(--text);font-family:'Space Grotesk';margin-top:2px;"></strong>
+        </div>
+        <div>
+          <span style="color:var(--muted);font:600 9px 'Space Grotesk';text-transform:uppercase;letter-spacing:.08em;">Typical Range</span>
+          <strong id="spec-modal-range" style="display:block;color:var(--text);font-family:'Space Grotesk';margin-top:2px;"></strong>
+        </div>
+        <div>
+          <span style="color:var(--muted);font:600 9px 'Space Grotesk';text-transform:uppercase;letter-spacing:.08em;">Interface Protocol</span>
+          <strong id="spec-modal-interface" style="display:block;color:var(--cyan);font-family:'Space Grotesk';margin-top:2px;"></strong>
+        </div>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:block;color:var(--cyan);font:600 11px 'Space Grotesk';text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Standard Pinout</span>
+        <ul class="pinout-list" id="spec-modal-pinouts"></ul>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:block;color:var(--cyan);font:600 11px 'Space Grotesk';text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Quick Arduino / ESP32 Code</span>
+        <pre style="background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:8px;padding:12px;font-family:monospace;font-size:11px;color:#a5f3fc;overflow-x:auto;max-height:160px;margin:0;"><code id="spec-modal-code"></code></pre>
+      </div>
+
+      <div>
+        <span style="display:block;color:var(--muted);font:600 9px 'Space Grotesk';text-transform:uppercase;letter-spacing:.08em;">Real-world Applications</span>
+        <p id="spec-modal-apps" style="font-size:12px;color:var(--text);margin:3px 0 0;"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
