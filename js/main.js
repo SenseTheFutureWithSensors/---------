@@ -97,10 +97,12 @@ if(menu && nav){
   }));
 }
 
-// Universal Page & Nav Active Link Highlighting
+// Universal Page & Nav Active Link Highlighting with Hash & Scrollspy Support
 const initUniversalActiveNav = () => {
   const currentPath = window.location.pathname.toLowerCase().split("/").pop() || "index.html";
-  const allNavLinks = document.querySelectorAll(".primary-nav > a:not(.button), .footer-grid div:not(.footer-brand) a");
+  const isIndexPage = (currentPath === "" || currentPath === "index.html" || currentPath.endsWith("index.html") || !currentPath.includes(".html"));
+  const primaryNavLinks = document.querySelectorAll(".primary-nav > a:not(.button)");
+  const footerLinks = document.querySelectorAll(".footer-grid div:not(.footer-brand) a");
 
   // Determine active target based on current filename
   let pageKey = "index.html";
@@ -108,25 +110,182 @@ const initUniversalActiveNav = () => {
   else if (currentPath.includes("innovation")) pageKey = "innovation.html";
   else if (currentPath.includes("learning")) pageKey = "learning.html";
   else if (currentPath.includes("projects")) pageKey = "projects.html";
-  else if (currentPath === "" || currentPath.includes("index")) pageKey = "index.html";
+  else pageKey = "index.html";
 
-  allNavLinks.forEach(link => {
-    const rawHref = link.getAttribute("href") || "";
-    const cleanHref = rawHref.split("#")[0].split("/").pop();
+  // Function to apply active classes to links
+  const updateNavActive = (activeKey) => {
+    // Primary Header Navigation
+    primaryNavLinks.forEach(link => {
+      const rawHref = link.getAttribute("href") || "";
+      let isMatch = false;
 
-    const isMatch = (cleanHref === pageKey) || 
-      (pageKey === "index.html" && (cleanHref === "" || cleanHref === "index.html" || rawHref === "#home"));
-
-    if (isMatch && !rawHref.includes("#")) {
-      link.classList.add("active");
-      if (link.closest(".primary-nav")) {
-        link.setAttribute("aria-current", "page");
+      if (activeKey === "community") {
+        isMatch = rawHref === "#community" || rawHref.endsWith("#community");
+      } else if (activeKey === "contact") {
+        isMatch = rawHref === "#contact" || rawHref.endsWith("#contact");
+      } else if (activeKey === "home" || activeKey === "index.html") {
+        const cleanHref = rawHref.split("#")[0].split("/").pop();
+        isMatch = (cleanHref === "index.html" || cleanHref === "" || rawHref === "#home") && !rawHref.includes("#community") && !rawHref.includes("#contact");
+      } else {
+        const cleanHref = rawHref.split("#")[0].split("/").pop();
+        isMatch = (cleanHref === activeKey);
       }
-    } else if (!rawHref.includes("#")) {
-      link.classList.remove("active");
-      link.removeAttribute("aria-current");
+
+      if (isMatch) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.classList.remove("active");
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    // Footer Navigation
+    footerLinks.forEach(link => {
+      const rawHref = link.getAttribute("href") || "";
+      let isMatch = false;
+
+      if (activeKey === "community") {
+        isMatch = rawHref === "#community" || rawHref.endsWith("#community");
+      } else if (activeKey === "contact") {
+        isMatch = rawHref === "#contact" || rawHref.endsWith("#contact");
+      } else if (activeKey === "home" || activeKey === "index.html") {
+        const cleanHref = rawHref.split("#")[0].split("/").pop();
+        isMatch = (cleanHref === "index.html" || cleanHref === "") && !rawHref.includes("#");
+      } else {
+        const cleanHref = rawHref.split("#")[0].split("/").pop();
+        isMatch = (cleanHref === activeKey);
+      }
+
+      if (isMatch) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  };
+
+  // Determine active key from URL hash or page
+  const getActiveKey = () => {
+    if (!isIndexPage) {
+      return pageKey;
     }
+    const hash = window.location.hash.toLowerCase();
+    if (hash === "#community") return "community";
+    if (hash === "#contact") return "contact";
+    return "home";
+  };
+
+  // Set initial active state
+  updateNavActive(getActiveKey());
+
+  // Listen for hash changes (browser back/forward or manual hash updates)
+  window.addEventListener("hashchange", () => {
+    updateNavActive(getActiveKey());
   });
+
+  // Index Page: Smooth anchor navigation & Scrollspy
+  if (isIndexPage) {
+    let navClickLock = false;
+    let clickLockTimer = null;
+
+    // Handle clicks on in-page anchor links smoothly
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      const rawHref = link.getAttribute("href") || "";
+
+      // Community anchor link
+      if (rawHref === "#community" || rawHref.endsWith("#community")) {
+        const targetEl = document.getElementById("community");
+        if (targetEl) {
+          e.preventDefault();
+          navClickLock = true;
+          clearTimeout(clickLockTimer);
+          updateNavActive("community");
+          history.pushState(null, "", "#community");
+          targetEl.scrollIntoView({ behavior: "smooth" });
+          if (nav) nav.classList.remove("open");
+          if (menu) {
+            menu.setAttribute("aria-expanded", "false");
+            menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          }
+          clickLockTimer = setTimeout(() => { navClickLock = false; }, 900);
+        }
+      }
+      // Contact anchor link
+      else if (rawHref === "#contact" || rawHref.endsWith("#contact")) {
+        const targetEl = document.getElementById("contact");
+        if (targetEl) {
+          e.preventDefault();
+          navClickLock = true;
+          clearTimeout(clickLockTimer);
+          updateNavActive("contact");
+          history.pushState(null, "", "#contact");
+          targetEl.scrollIntoView({ behavior: "smooth" });
+          if (nav) nav.classList.remove("open");
+          if (menu) {
+            menu.setAttribute("aria-expanded", "false");
+            menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          }
+          clickLockTimer = setTimeout(() => { navClickLock = false; }, 900);
+        }
+      }
+      // Home / Top anchor or brand link
+      else if ((link.closest(".primary-nav") || link.classList.contains("brand")) && (rawHref === "index.html" || rawHref === "#home" || rawHref === "#top" || rawHref === "./")) {
+        e.preventDefault();
+        navClickLock = true;
+        clearTimeout(clickLockTimer);
+        updateNavActive("home");
+        if (window.location.hash) {
+          history.pushState(null, "", window.location.pathname);
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (nav) nav.classList.remove("open");
+        if (menu) {
+          menu.setAttribute("aria-expanded", "false");
+          menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+        clickLockTimer = setTimeout(() => { navClickLock = false; }, 900);
+      }
+    });
+
+    // Scrollspy on Index Page
+    const handleIndexScrollspy = () => {
+      if (navClickLock) return;
+
+      const communityEl = document.getElementById("community");
+      const contactEl = document.getElementById("contact");
+      const resourcesEl = document.getElementById("resources");
+
+      const scrollPos = window.scrollY + 140;
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 70);
+
+      let targetKey = "home";
+
+      if (atBottom || (contactEl && scrollPos >= contactEl.offsetTop)) {
+        targetKey = "contact";
+      } else if (communityEl && scrollPos >= communityEl.offsetTop && (!resourcesEl || scrollPos < resourcesEl.offsetTop)) {
+        targetKey = "community";
+      } else {
+        targetKey = "home";
+      }
+
+      updateNavActive(targetKey);
+    };
+
+    let scrollTicking = false;
+    window.addEventListener("scroll", () => {
+      if (!navClickLock && !scrollTicking) {
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+          handleIndexScrollspy();
+          scrollTicking = false;
+        });
+      }
+    }, { passive: true });
+  }
 };
 
 initUniversalActiveNav();
