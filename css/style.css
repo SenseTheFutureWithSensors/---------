@@ -1487,6 +1487,111 @@ html[data-theme="light"] .crit-badge.crit-comfort {
   border-color: rgba(2, 132, 199, 0.3) !important;
 }
 
+/* F. Community Initiative & Footer Contrast in Both Themes */
+.footer-initiative {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 10% 50%, rgba(34, 211, 238, 0.12), transparent 80%), rgba(12, 23, 40, 0.85);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  color: var(--muted);
+  font-size: 11.5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+.footer-initiative i {
+  color: var(--cyan);
+  font-size: 12px;
+}
+.footer-initiative b,
+.footer-bottom b {
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.footer-initiative:hover {
+  border-color: rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Footer & Initiative in Light Theme */
+html[data-theme="light"] .site-footer {
+  background: #ffffff !important;
+  border-top: 1.5px solid rgba(71, 95, 122, 0.18) !important;
+  box-shadow: 0 -10px 40px rgba(15, 23, 42, 0.03) !important;
+}
+html[data-theme="light"] .footer-brand strong {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .footer-brand p {
+  color: #475569 !important;
+}
+html[data-theme="light"] .footer-grid h3 {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .footer-grid a {
+  color: #475569 !important;
+}
+html[data-theme="light"] .footer-grid a:hover {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .footer-bottom {
+  border-top: 1px solid rgba(71, 95, 122, 0.16) !important;
+  color: #475569 !important;
+}
+html[data-theme="light"] .footer-bottom span {
+  color: #475569 !important;
+}
+html[data-theme="light"] .footer-bottom b {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .footer-initiative {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), rgba(124, 58, 237, 0.05), #ffffff) !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.28) !important;
+  color: #334155 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08) !important;
+}
+html[data-theme="light"] .footer-initiative i {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .footer-initiative b {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .footer-initiative:hover {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.14), rgba(124, 58, 237, 0.08), #ffffff) !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.16) !important;
+  transform: translateY(-2px);
+}
+
+/* Partner Cards on index.html in Light Theme */
+html[data-theme="light"] .partner {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.18) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+html[data-theme="light"] .partner:hover {
+  border-color: #0284c7 !important;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.12) !important;
+  transform: translateY(-4px);
+}
+html[data-theme="light"] .partner span {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #0284c7, #7c3aed) !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25) !important;
+}
+html[data-theme="light"] .partner strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
 /* ==========================================================================
    UNIVERSAL MOBILE & RESPONSIVE PERFECTION SUITE
    Guarantees 100% flawless layout, typography scaling, touch ergonomics,
