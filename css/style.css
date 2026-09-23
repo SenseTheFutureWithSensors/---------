@@ -801,17 +801,10 @@ html[data-theme="light"] .chain-node,
 html[data-theme="light"] .sector-card,
 html[data-theme="light"] .blueprint-card,
 html[data-theme="light"] .framework-card,
-html[data-theme="light"] .generator-card,
-html[data-theme="light"] .gen-output,
 html[data-theme="light"] .param-card,
 html[data-theme="light"] .trap-card,
-html[data-theme="light"] .calc-container,
-html[data-theme="light"] .calc-result-box,
 html[data-theme="light"] .industry-card,
 html[data-theme="light"] .maker-card,
-html[data-theme="light"] .dissect-box,
-html[data-theme="light"] .dissect-detail-panel,
-html[data-theme="light"] .subsystem-btn,
 html[data-theme="light"] .sensor-modal {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(238, 244, 251, 0.92)) !important;
   border-color: rgba(71, 95, 122, 0.18) !important;
@@ -1138,7 +1131,6 @@ html[data-theme="light"] .search-box input::placeholder {
 /* 11. Chips, Badges & Small Details in Light Mode */
 html[data-theme="light"] .card-chip,
 html[data-theme="light"] .sensor-pill,
-html[data-theme="light"] .gen-output-item,
 html[data-theme="light"] .pinout-list li {
   background: rgba(225, 233, 243, 0.7) !important;
   border-color: rgba(71, 95, 122, 0.2) !important;
@@ -1150,6 +1142,349 @@ html[data-theme="light"] .hindi-tagline {
 html[data-theme="light"] blockquote {
   color: #0f172a !important;
   border-left-color: #0284c7 !important;
+}
+
+/* ==========================================================================
+   12. SPECIAL INTERACTIVE WORKBENCHES & CARDS IN LIGHT THEME
+   - Innovation Idea Generator ("Brainstorm Your Next Invention" in innovation.html)
+   - Characteristics Calculator ("Interactive Sensor Calculator" in learning.html)
+   - Systems Dissection Tool ("Sensor Systems Dissection" in projects.html)
+   ========================================================================== */
+
+/* A. Section Background & Typography */
+html[data-theme="light"] .generator-section {
+  background: linear-gradient(180deg, rgba(2, 132, 199, 0.04), rgba(238, 244, 251, 0.4) 60%, transparent) !important;
+}
+html[data-theme="light"] .generator-section .centered-heading .eyebrow {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+}
+html[data-theme="light"] .generator-section .centered-heading h2 {
+  color: #0f172a !important;
+}
+html[data-theme="light"] .generator-section .centered-heading h2 span {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .generator-section .centered-heading p {
+  color: #475569 !important;
+}
+
+/* B. Brainstorm Your Next Invention Card (.generator-card) */
+html[data-theme="light"] .generator-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.28) !important;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .gen-field label {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.08em !important;
+}
+html[data-theme="light"] .gen-field label i {
+  color: #0284c7 !important;
+  margin-right: 4px;
+}
+html[data-theme="light"] .gen-select {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.26) !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+html[data-theme="light"] .gen-select:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18) !important;
+}
+html[data-theme="light"] .gen-select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .gen-btn {
+  background: linear-gradient(110deg, #0284c7, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25) !important;
+  border: none !important;
+}
+html[data-theme="light"] .gen-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.38) !important;
+  color: #ffffff !important;
+}
+
+/* Inner Generated Idea Output Box */
+html[data-theme="light"] .gen-output {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.22) !important;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06) !important;
+  border-radius: 18px !important;
+}
+html[data-theme="light"] .gen-output-header h3 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .gen-output #gen-solution {
+  color: #334155 !important;
+  font-size: 13.5px !important;
+  line-height: 1.75 !important;
+}
+html[data-theme="light"] .gen-output .challenge-box {
+  background: rgba(239, 68, 68, 0.07) !important;
+  border-left: 3.5px solid #dc2626 !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+}
+html[data-theme="light"] .gen-output .challenge-box strong {
+  color: #b91c1c !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+html[data-theme="light"] .gen-output .challenge-box span {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+html[data-theme="light"] .gen-output .gen-output-item {
+  background: #f8fafc !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.16) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03) !important;
+  padding: 14px 16px !important;
+}
+html[data-theme="light"] .gen-output .gen-output-item span {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+html[data-theme="light"] .gen-output .gen-output-item strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .gen-output .gen-output-item #gen-impact {
+  color: #15803d !important;
+  font-weight: 700 !important;
+}
+
+/* C. Interactive Sensor Characteristics Calculator (.calc-container) */
+html[data-theme="light"] .calc-container {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.28) !important;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .calc-tabs {
+  border-bottom: 1.5px solid rgba(71, 95, 122, 0.18) !important;
+}
+html[data-theme="light"] .calc-tab-btn {
+  background: #f1f5f9 !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.22) !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+html[data-theme="light"] .calc-tab-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0284c7 !important;
+  border-color: #0284c7 !important;
+}
+html[data-theme="light"] .calc-tab-btn.active {
+  background: linear-gradient(110deg, #0284c7, #2563eb) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35) !important;
+}
+html[data-theme="light"] .calc-field label {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.08em !important;
+}
+html[data-theme="light"] .calc-field input,
+html[data-theme="light"] .calc-field select {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.24) !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+html[data-theme="light"] .calc-field input:focus,
+html[data-theme="light"] .calc-field select:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18) !important;
+}
+html[data-theme="light"] .calc-field select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .calc-field small {
+  color: #64748b !important;
+  font-weight: 500 !important;
+}
+
+/* Inner Calc Result Box */
+html[data-theme="light"] .calc-result-box {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.22) !important;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06) !important;
+  border-radius: 18px !important;
+}
+html[data-theme="light"] .calc-result-box h4 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .res-highlight {
+  background: linear-gradient(145deg, #e0f2fe, #f0f9ff) !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1) !important;
+}
+html[data-theme="light"] .res-highlight span {
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .res-highlight strong {
+  color: #0284c7 !important;
+  font-weight: 800 !important;
+}
+html[data-theme="light"] .res-breakdown {
+  color: #475569 !important;
+}
+html[data-theme="light"] .res-breakdown li {
+  border-bottom: 1px solid rgba(71, 95, 122, 0.16) !important;
+}
+html[data-theme="light"] .res-breakdown li span {
+  color: #475569 !important;
+  font-weight: 500 !important;
+}
+html[data-theme="light"] .res-breakdown li strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* D. Interactive Industrial Systems Dissection Widget (.dissect-box) */
+html[data-theme="light"] .dissect-box {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.28) !important;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08) !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .dissect-system-tabs {
+  border-bottom: 1.5px solid rgba(71, 95, 122, 0.18) !important;
+}
+html[data-theme="light"] .dissect-sys-btn {
+  background: #f1f5f9 !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.22) !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+html[data-theme="light"] .dissect-sys-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0284c7 !important;
+  border-color: #0284c7 !important;
+}
+html[data-theme="light"] .dissect-sys-btn.active {
+  background: linear-gradient(110deg, #0284c7, #2563eb) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35) !important;
+}
+html[data-theme="light"] .subsystem-btn {
+  background: #f8fafc !important;
+  border: 1.5px solid rgba(71, 95, 122, 0.2) !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+html[data-theme="light"] .subsystem-btn:hover {
+  border-color: #0284c7 !important;
+  background: #f0f9ff !important;
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .subsystem-btn.active {
+  background: #e0f2fe !important;
+  border-color: #0284c7 !important;
+  color: #0369a1 !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .subsystem-btn i {
+  color: #0284c7 !important;
+}
+html[data-theme="light"] .dissect-detail-panel {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(2, 132, 199, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+html[data-theme="light"] .dissect-detail-header h3 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* E. Sector Badges & Industry Chips Contrast in Light Theme */
+html[data-theme="light"] .badge-agri,
+html[data-theme="light"] .badge-defense {
+  background: rgba(22, 163, 74, 0.1) !important;
+  color: #15803d !important;
+  border-color: rgba(22, 163, 74, 0.3) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .badge-health,
+html[data-theme="light"] .badge-auto {
+  background: rgba(220, 38, 38, 0.1) !important;
+  color: #b91c1c !important;
+  border-color: rgba(220, 38, 38, 0.28) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .badge-city,
+html[data-theme="light"] .badge-aero {
+  background: rgba(37, 99, 235, 0.1) !important;
+  color: #1d4ed8 !important;
+  border-color: rgba(37, 99, 235, 0.28) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .badge-industry,
+html[data-theme="light"] .badge-power {
+  background: rgba(217, 119, 6, 0.1) !important;
+  color: #b45309 !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .badge-eco,
+html[data-theme="light"] .badge-space {
+  background: rgba(13, 148, 136, 0.1) !important;
+  color: #0f766e !important;
+  border-color: rgba(13, 148, 136, 0.3) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .badge-home,
+html[data-theme="light"] .badge-appliances {
+  background: rgba(124, 58, 237, 0.1) !important;
+  color: #6d28d9 !important;
+  border-color: rgba(124, 58, 237, 0.28) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .badge-assist,
+html[data-theme="light"] .badge-mobile {
+  background: rgba(219, 39, 119, 0.1) !important;
+  color: #be185d !important;
+  border-color: rgba(219, 39, 119, 0.28) !important;
+  font-weight: 700 !important;
+}
+html[data-theme="light"] .crit-badge.crit-safety {
+  background: rgba(220, 38, 38, 0.1) !important;
+  color: #b91c1c !important;
+  border-color: rgba(220, 38, 38, 0.3) !important;
+}
+html[data-theme="light"] .crit-badge.crit-mission {
+  background: rgba(217, 119, 6, 0.1) !important;
+  color: #b45309 !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+}
+html[data-theme="light"] .crit-badge.crit-comfort {
+  background: rgba(2, 132, 199, 0.1) !important;
+  color: #0369a1 !important;
+  border-color: rgba(2, 132, 199, 0.3) !important;
 }
 
 /* ==========================================================================
